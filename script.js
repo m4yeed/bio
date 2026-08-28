@@ -63,11 +63,30 @@ const tracks = [
         url: "https://soundcloud.com/snowmanservin/dont-b-affraid-p-mtrsprt-ok"
     },
     {
-        title: "//WHAT U NED BBY FT BLXXDN//##Sitcomclones",
+        title: "//WHAT U NED BBY FT BLXXDN//", 
         artist: "pinstripes",
         cover: "https://i.postimg.cc/13vdBYbK/image.png",
         url: "https://soundcloud.com/mehwiththemuha/whatyouneed"
-    }
+    },
+    {
+    title: "𝓌𝑒 𝒷𝑜𝓉𝒽 𝒹𝒾𝑒",
+    artist: "pinstripes",
+    cover: "https://i.postimg.cc/SsnfVrHZ/image.png",
+    url: "https://soundcloud.com/mehwiththemuha/we-both-die"
+},
+        { 
+            title: "a cry for help that you will all ignore",
+            artist: "the problem", 
+            cover: "https://i.postimg.cc/QM0ffVtn/image.png",
+            url: "https://soundcloud.com/0000_oooo/cry",
+        },
+        {
+            title: "ネ​ッ​テ​ィ​・​マ​リ​ア​・​ス​テ​ィ​ー​ブ​ン​ス",
+            artist: "Miraidempa 未来電波基地",
+            cover: "https://i.postimg.cc/Fz7FYfd7/image.png",
+            url: "https://soundcloud.com/iliillilil/9b9a922d-4ce5-41dc-9957-fafaadb178f4",
+        }
+    
 ];
 
 let currentTrack = 0;
