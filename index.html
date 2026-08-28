@@ -1,0 +1,225 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>mayee</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://w.soundcloud.com/player/api.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Rain -->
+        <div class="rain" id="rain"></div>
+
+        <!-- Cursor -->
+        <div class="cursor" id="cursor"></div>
+        <div class="cursor-glow" id="cursorGlow"></div>
+
+        <!-- Click effect -->
+        <div class="click-effects" id="clickEffects"></div>
+
+        <!-- Main -->
+        <main class="page">
+
+            <section class="profile-card" id="profileCard">
+
+                <!-- Profile -->
+                <div class="profile">
+
+                    <div class="avatar-wrap">
+                        <img
+                            class="avatar"
+                            id="avatar"
+                            src="https://i.postimg.cc/SN8t0x3G/image.png"
+                            alt="mayee"
+                        >
+
+                        <span class="online-dot" id="onlineDot"></span>
+                    </div>
+
+                    <h1>mayee</h1>
+
+                    <p class="description">
+                        я лудоман в яндекс играх
+                    </p>
+
+                </div>
+
+                <!-- Discord Activity -->
+                <div class="activity" id="activity">
+
+                    <div class="activity-image-wrap">
+                        <img
+                            id="activityImage"
+                            class="activity-image"
+                            src="https://i.postimg.cc/cJMSdczX/image.png"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="activity-info">
+                        <span class="activity-label" id="activityLabel">
+                            Listening to music
+                        </span>
+
+                        <strong id="activityName">
+                            Don't B Affraid
+                        </strong>
+
+                        <span id="activityDetails">
+                            tony shhnow
+                        </span>
+
+                        <span class="activity-status" id="activityStatus">
+                            ● online
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Socials -->
+                <div class="socials">
+
+        <a
+        class="social"
+        href="https://t.me/madyeed"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Telegram"
+    >
+        <img class="social-icon" src="icons/telegram.svg" alt="Telegram">
+        <small>@madyeed</small>
+    </a>
+
+                    <a
+                        class="social"
+                        href="https://www.tiktok.com/@mmaeedyy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="TikTok"
+                    >
+                        <img class="social-icon" src="icons/tiktok.svg" alt="TikTok">
+                        <small>mmaeedyy</small>
+                    </a>
+
+                    <a
+        class="social"
+        href="https://soundcloud.com/mayeedd"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="SoundCloud"
+    >
+        <img class="social-icon" src="icons/soundcloud.svg" alt="SoundCloud">
+        <small>mayeedd</small>
+    </a>
+
+                </div>
+
+                
+               
+<!-- Player -->
+<div class="player">
+
+    <img
+        id="trackCover"
+        class="track-cover"
+        src="https://i.postimg.cc/cJMSdczX/image.png"
+        alt=""
+    >
+
+    <div class="track-main">
+
+        <div class="track-info">
+            <div class="track-title" id="trackTitle">
+                Don't B Affraid
+            </div>
+
+            <div class="track-artist" id="trackArtist">
+                tony shhnow
+            </div>
+        </div>
+
+        <div class="progress-container">
+
+            <span id="currentTime">0:00</span>
+
+            <input
+                id="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <span id="duration">0:00</span>
+
+        </div>
+
+    </div>
+
+    <div class="player-controls">
+
+        <button id="prevTrack" aria-label="Previous track">
+            ‹
+        </button>
+
+        <button
+            id="playButton"
+            class="play-button"
+            aria-label="Play"
+        >
+            ▶
+        </button>
+
+        <button id="nextTrack" aria-label="Next track">
+            ›
+        </button>
+
+        <div class="volume-container">
+
+            <span>◖</span>
+
+            <input
+                id="volume"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.65"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </section>
+
+        </main>
+
+    <iframe
+        id="soundcloudWidget"
+        title="SoundCloud player"
+        style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;border:0;"
+        allow="autoplay"
+    ></iframe>
+
+    <script src="script.js"></script>
+            
+    </body>
+    </html>
