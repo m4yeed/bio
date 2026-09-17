@@ -63,30 +63,29 @@ const tracks = [
         url: "https://soundcloud.com/snowmanservin/dont-b-affraid-p-mtrsprt-ok"
     },
     {
-        title: "//WHAT U NED BBY FT BLXXDN//", 
+        title: "//WHAT U NED BBY FT BLXXDN//",
         artist: "pinstripes",
         cover: "https://i.postimg.cc/13vdBYbK/image.png",
         url: "https://soundcloud.com/mehwiththemuha/whatyouneed"
     },
     {
-    title: "𝓌𝑒 𝒷𝑜𝓉𝒽 𝒹𝒾𝑒",
-    artist: "pinstripes",
-    cover: "https://i.postimg.cc/SsnfVrHZ/image.png",
-    url: "https://soundcloud.com/mehwiththemuha/we-both-die"
-},
-        { 
-            title: "a cry for help that you will all ignore",
-            artist: "the problem", 
-            cover: "https://i.postimg.cc/QM0ffVtn/image.png",
-            url: "https://soundcloud.com/0000_oooo/cry",
-        },
-        {
-            title: "ネ​ッ​テ​ィ​・​マ​リ​ア​・​ス​テ​ィ​ー​ブ​ン​ス",
-            artist: "Miraidempa 未来電波基地",
-            cover: "https://i.postimg.cc/Fz7FYfd7/image.png",
-            url: "https://soundcloud.com/iliillilil/9b9a922d-4ce5-41dc-9957-fafaadb178f4",
-        }
-    
+        title: "𝓌𝑒 𝒷𝑜𝓉𝒽 𝒹𝒾𝑒",
+        artist: "pinstripes",
+        cover: "https://i.postimg.cc/SsnfVrHZ/image.png",
+        url: "https://soundcloud.com/mehwiththemuha/we-both-die"
+    },
+    {
+        title: "a cry for help that you will all ignore",
+        artist: "the problem",
+        cover: "https://i.postimg.cc/QM0ffVtn/image.png",
+        url: "https://soundcloud.com/0000_oooo/cry"
+    },
+    {
+        title: "ネ​ッ​テ​ィ​・​マ​リ​ア​・​ス​テ​ィ​ー​ブ​ン​ス",
+        artist: "Miraidempa 未来電波基地",
+        cover: "https://i.postimg.cc/Fz7FYfd7/image.png",
+        url: "https://soundcloud.com/iliillilil/9b9a922d-4ce5-41dc-9957-fafaadb178f4"
+    }
 ];
 
 let currentTrack = 0;
@@ -160,10 +159,13 @@ document.addEventListener(
     "mousemove",
     (event) => {
         mouseX = event.clientX;
-        mouseY = event.clientY; 
+        mouseY = event.clientY;
 
-        cursor.style.left = `${mouseX - 2}px`;
-cursor.style.top = `${mouseY - 2}px`;
+        cursor.style.left =
+            `${mouseX - 2}px`;
+
+        cursor.style.top =
+            `${mouseY - 2}px`;
     }
 );
 
@@ -384,38 +386,38 @@ function loadTrack(
         return;
     }
 
-  widget.load(
-    track.url,
-    {
-        auto_play: autoplay,
-        hide_related: true,
-        show_comments: false,
-        show_user: false,
-        show_reposts: false,
-        show_teaser: false,
-        visual: false,
-        buying: false,
-        liking: false,
-        sharing: false,
-        download: false,
-        show_playcount: false,
-        show_artwork: false
-    },
-    () => {
-        widget.getDuration(
-            (duration) => {
-                currentDuration = duration;
+    widget.load(
+        track.url,
+        {
+            auto_play: autoplay,
+            hide_related: true,
+            show_comments: false,
+            show_user: false,
+            show_reposts: false,
+            show_teaser: false,
+            visual: false,
+            buying: false,
+            liking: false,
+            sharing: false,
+            download: false,
+            show_playcount: false,
+            show_artwork: false
+        },
+        () => {
+            widget.getDuration(
+                (duration) => {
+                    currentDuration = duration;
 
-                durationElement.textContent =
-                    formatTime(
-                        duration / 1000
-                    );
-            }
-        );
-    }
-);
-
+                    durationElement.textContent =
+                        formatTime(
+                            duration / 1000
+                        );
+                }
+            );
+        }
+    );
 }
+
 
 function togglePlay() {
     console.log("PLAY CLICK", {
@@ -485,20 +487,20 @@ function initSoundCloud() {
     }
 
     console.log(
-    "SC READY TO INIT",
-    SC,
-    soundcloudWidget
-);
-
-   soundcloudWidget.src =
-    "https://w.soundcloud.com/player/?url=" +
-    encodeURIComponent(tracks[0].url) +
-    "&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false";
-
-widget =
-    SC.Widget(
+        "SC READY TO INIT",
+        SC,
         soundcloudWidget
     );
+
+    soundcloudWidget.src =
+        "https://w.soundcloud.com/player/?url=" +
+        encodeURIComponent(tracks[0].url) +
+        "&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false";
+
+    widget =
+        SC.Widget(
+            soundcloudWidget
+        );
 
     widget.bind(
         SC.Widget.Events.READY,
@@ -521,31 +523,30 @@ widget =
                         );
                 }
             );
-
-           
         }
     );
 
 
     widget.bind(
-    SC.Widget.Events.PLAY,
-    () => {
-        playButton.textContent =
-            "Ⅱ";
+        SC.Widget.Events.PLAY,
+        () => {
+            playButton.textContent =
+                "Ⅱ";
 
-        widget.getDuration(
-            (duration) => {
-                currentDuration =
-                    duration;
+            widget.getDuration(
+                (duration) => {
+                    currentDuration =
+                        duration;
 
-                durationElement.textContent =
-                    formatTime(
-                        duration / 1000
-                    );
-            }
-        );
-    }
-);
+                    durationElement.textContent =
+                        formatTime(
+                            duration / 1000
+                        );
+                }
+            );
+        }
+    );
+
 
     widget.bind(
         SC.Widget.Events.PAUSE,
@@ -555,25 +556,27 @@ widget =
         }
     );
 
-widget.bind(
-    SC.Widget.Events.PLAY_PROGRESS,
-    (event) => {
-        const position =
-            event.currentPosition || 0;
 
-        if (!currentDuration) {
-            return;
+    widget.bind(
+        SC.Widget.Events.PLAY_PROGRESS,
+        (event) => {
+            const position =
+                event.currentPosition || 0;
+
+            if (!currentDuration) {
+                return;
+            }
+
+            progress.value =
+                (position / currentDuration) * 100;
+
+            currentTimeElement.textContent =
+                formatTime(
+                    position / 1000
+                );
         }
+    );
 
-        progress.value =
-            (position / currentDuration) * 100;
-
-        currentTimeElement.textContent =
-            formatTime(
-                position / 1000
-            );
-    }
-);
 
     widget.bind(
         SC.Widget.Events.FINISH,
@@ -627,7 +630,7 @@ progress.addEventListener(
 
         widget.seekTo(position);
     }
-);  
+);
 
 
 /* =========================
@@ -656,6 +659,7 @@ widgetReady = false;
 
 const DISCORD_ID =
     "1222100487604801601";
+
 
 function getLanyardImage(image, applicationId) {
     if (!image) {
@@ -689,6 +693,7 @@ function getLanyardImage(image, applicationId) {
     return image;
 }
 
+
 async function updateDiscord() {
     try {
         const response =
@@ -715,7 +720,9 @@ async function updateDiscord() {
             result.data;
 
 
-        /* Status */
+        /* =========================
+           Status
+        ========================= */
 
         const online =
             data.discord_status !==
@@ -737,7 +744,9 @@ async function updateDiscord() {
                 : "● offline";
 
 
-        /* Discord avatar */
+        /* =========================
+           Discord avatar
+        ========================= */
 
         if (
             data.discord_user?.avatar
@@ -749,7 +758,9 @@ async function updateDiscord() {
         }
 
 
-        /* Activity */
+        /* =========================
+           Activity
+        ========================= */
 
         const activities =
             data.activities || [];
@@ -760,7 +771,9 @@ async function updateDiscord() {
                     item.type !== 4
             );
 
+
         if (activity) {
+
             activityLabel.textContent =
                 activity.type === 2
                     ? "Listening to music"
@@ -775,19 +788,69 @@ async function updateDiscord() {
                 activity.state ||
                 "";
 
+
             const image =
                 getLanyardImage(
                     activity.assets?.large_image,
                     activity.application_id
                 );
 
+
             if (image) {
                 activityImage.src =
                     image;
             }
+
+
+            // Показываем активность
+            activityImage.style.display =
+                "";
+
+            activityName.style.display =
+                "";
+
+            activityDetails.style.display =
+                "";
+
+            activityLabel.style.display =
+                "";
+
+        } else {
+
+            // Ничего не слушает и не играет.
+            // Полностью очищаем старую активность.
+
+            activityLabel.textContent =
+                "";
+
+            activityName.textContent =
+                "";
+
+            activityDetails.textContent =
+                "";
+
+            activityImage.removeAttribute(
+                "src"
+            );
+
+
+            // Скрываем старые данные
+
+            activityImage.style.display =
+                "none";
+
+            activityName.style.display =
+                "none";
+
+            activityDetails.style.display =
+                "none";
+
+            activityLabel.style.display =
+                "none";
         }
 
     } catch (error) {
+
         console.warn(
             "Lanyard unavailable:",
             error
