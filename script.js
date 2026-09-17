@@ -743,6 +743,11 @@ async function updateDiscord() {
                 ? `● ${data.discord_status}`
                 : "● offline";
 
+        activityStatus.style.color =
+            online
+                ? "#43d17a"
+                : "#8b8d91";
+
 
         /* =========================
            Discord avatar
@@ -802,7 +807,6 @@ async function updateDiscord() {
             }
 
 
-            // Показываем активность
             activityImage.style.display =
                 "";
 
@@ -817,9 +821,6 @@ async function updateDiscord() {
 
         } else {
 
-            // Ничего не слушает и не играет.
-            // Полностью очищаем старую активность.
-
             activityLabel.textContent =
                 "";
 
@@ -833,8 +834,6 @@ async function updateDiscord() {
                 "src"
             );
 
-
-            // Скрываем старые данные
 
             activityImage.style.display =
                 "none";
