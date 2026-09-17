@@ -69,7 +69,7 @@ const tracks = [
         url: "https://soundcloud.com/mehwiththemuha/whatyouneed"
     },
     {
-        title: "𝓌𝑒 𝒷𝑜𝓉𝒽 𝒹𝒾𝑒",
+        title: "𝓌𝑒 𝒷𝑜𝓉𝒽 𝒹𝑖𝑒",
         artist: "pinstripes",
         cover: "https://i.postimg.cc/SsnfVrHZ/image.png",
         url: "https://soundcloud.com/mehwiththemuha/we-both-die"
@@ -743,10 +743,11 @@ async function updateDiscord() {
                 ? `● ${data.discord_status}`
                 : "● offline";
 
-        activityStatus.style.color =
-            online
-                ? "#43d17a"
-                : "#8b8d91";
+        activityStatus.style.setProperty(
+            "color",
+            online ? "#43d17a" : "#8b8d91",
+            "important"
+        );
 
 
         /* =========================
